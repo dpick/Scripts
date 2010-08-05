@@ -1,6 +1,6 @@
 require 'fileutils'
 
-MEDIAPATH = '/home/david/code/move_files/'
+MEDIAPATH = '/media/'
 
 
 def tvDirectory(show)
