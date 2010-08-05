@@ -1,6 +1,7 @@
 require 'fileutils'
 
 MEDIAPATH = '/media/'
+DOWNLOADSDIR = '~/downloads/complete/TV'
 
 
 def tvDirectory(show)
@@ -31,7 +32,7 @@ def foldersExist?(show, season)
   end
 end
 
-dir = Dir.open(MEDIAPATH) 
+dir = Dir.open(DOWNLOADSDIR) 
 
 dir.each do |filename|
   if filename =~ /([0-9]+)x([0-9]*)/ 
