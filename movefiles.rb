@@ -1,7 +1,8 @@
+ #!/usr/bin/env ruby
 require 'fileutils'
 
 MEDIAPATH = '/media/'
-DOWNLOADSDIR = '~/downloads/complete/TV'
+DOWNLOADSDIR = '/home/david/downloads/complete/TV'
 
 
 def tvDirectory(show)
@@ -45,6 +46,6 @@ dir.each do |filename|
 
     foldersExist?(show, season)
 
-    FileUtils.mv(filename, MEDIAPATH + tvDirectory(show) + '/' + show + '/Season ' + season + '/' + filename)
+    FileUtils.mv(DOWNLOADSDIR + '/' + filename, MEDIAPATH + tvDirectory(show) + '/' + show + '/Season ' + season + '/' + filename)
   end
 end
