@@ -19,16 +19,19 @@ end
 def foldersExist?(show, season)
   if !File.directory?(MEDIAPATH + tvDirectory(show))
     puts 'directory did not exist, creating it'
+    puts MEDIAPATH + tvDirectory(show))
     Dir.mkdir(MEDIAPATH + tvDirectory(show))
   end
 
   if !File.directory?(MEDIAPATH + tvDirectory(show) + '/' + show)
     puts 'directory did not exist, creating it'
+    puts MEDIAPATH + tvDirectory(show)) + '/' + show
     Dir.mkdir(MEDIAPATH + tvDirectory(show) + '/' + show)
   end
 
   if !File.directory?(MEDIAPATH + tvDirectory(show) + '/' + show + '/Season ' + season)
     puts 'directory did not exist, creating it'
+    puts MEDIAPATH + tvDirectory(show)) + '/' + show + '/Season ' + season
     Dir.mkdir(MEDIAPATH + tvDirectory(show) + '/' + show + '/Season ' + season)
   end
 end
