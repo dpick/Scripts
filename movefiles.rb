@@ -44,6 +44,7 @@ dir.each do |filename|
     season = $1
     episode = $2
     show = filename.gsub(/ -.*/, '')
+    #I don't want 'the' in the folder names
     if show =~ /^The/
       show = show.gsub(/^The /, '')
     end
