@@ -4,7 +4,7 @@ require 'fileutils'
 MEDIAPATH = '/media/'
 DOWNLOADSDIR = '/home/david/downloads/complete/TV'
 
-
+#tv directories are split alphabetically
 def tvDirectory(show)
   if show =~ /^[A-Ha-h]/
     return 'tv'
@@ -38,6 +38,7 @@ end
 
 dir = Dir.open(DOWNLOADSDIR) 
 
+#pull show information out of filename and move file to show folder
 dir.each do |filename|
   if filename =~ /([0-9]+)x([0-9]*)/ 
     season = $1
