@@ -1,4 +1,4 @@
- #!/usr/bin/env ruby
+ #!/usr/bin/ruby
 require 'fileutils'
 
 MEDIAPATH = '/media/'
@@ -36,7 +36,8 @@ def foldersExist?(show, season)
   end
 end
 
-dir = Dir.open(DOWNLOADSDIR) 
+Dir.chdir(DOWNLOADSDIR)
+dir = Dir.glob("*.{avi,mkv}")
 
 #pull show information out of filename and move file to show folder
 dir.each do |filename|
@@ -50,7 +51,7 @@ dir.each do |filename|
     end
 
     foldersExist?(show, season)
-
+    puts "Moving #{filename} to #{MEDIAPATH}#{tvDirectory(show)}/#{show}/Season #{season}/#{filename}"
     FileUtils.mv(DOWNLOADSDIR + '/' + filename, MEDIAPATH + tvDirectory(show) + '/' + show + '/Season ' + season + '/' + filename)
   end
 end
