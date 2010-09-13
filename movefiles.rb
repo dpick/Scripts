@@ -3,6 +3,7 @@ require 'fileutils'
 
 MEDIAPATH = '/media/'
 DOWNLOADSDIR = '/home/david/downloads/complete/TV'
+puts 'The Script is Running'
 
 #tv directories are split alphabetically
 def tvDirectory(show)
@@ -48,6 +49,7 @@ dir.each do |filename|
     #I don't want 'the' in the folder names
     if show =~ /^The/
       show = show.gsub(/^The /, '')
+      show += ", The"
     end
 
     foldersExist?(show, season)
