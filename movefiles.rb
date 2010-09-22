@@ -1,5 +1,6 @@
  #!/usr/bin/ruby
 require 'fileutils'
+require 'net/http'
 
 MEDIAPATH = '/media/'
 DOWNLOADSDIR = '/home/david/downloads/complete/TV'
@@ -58,5 +59,4 @@ dir.each do |filename|
   end
 end
 
-%x(wget http://localhost:8082/xbmcCmds/xbmcHttp?command=ExecBuiltIn&parameter=XBMC.updatelibrary(video) >/dev/null 2>&1)
-
+exec 'curl --get --user xbmc:xbmc "http://137.112.147.92:8082/xbmcCmds/xbmcHttp?command=ExecBuiltIn&parameter=XBMC.updatelibrary(video)"'
