@@ -57,3 +57,6 @@ dir.each do |filename|
     FileUtils.mv(DOWNLOADSDIR + '/' + filename, MEDIAPATH + tvDirectory(show) + '/' + show + '/Season ' + season + '/' + filename)
   end
 end
+
+%x(wget http://localhost:8082/xbmcCmds/xbmcHttp?command=ExecBuiltIn&parameter=XBMC.updatelibrary(video) >/dev/null 2>&1)
+
