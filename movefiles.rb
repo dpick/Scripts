@@ -56,4 +56,4 @@ dir.each do |filename|
   end
 end
 
-exec 'curl --get --user xbmc:xbmc "http://137.112.147.92:8082/xbmcCmds/xbmcHttp?command=ExecBuiltIn&parameter=XBMC.updatelibrary(video)"'
+#exec 'curl --get --user xbmc:xbmc "http://137.112.147.92:8082/xbmcCmds/xbmcHttp?command=ExecBuiltIn&parameter=XBMC.updatelibrary(video)"'
