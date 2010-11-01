@@ -19,17 +19,15 @@ def get_time(period)
 end
 
 def current_period
+  current = @schedule[0]
+
   @schedule.each do |period|
-    if get_time(period) <=> Time.now
-      current = period
+    if get_time(period) > Time.now
+      return period
     end
   end
 
-  if defined? current
-    return current
-  else
-    return @schedule[0]
-  end
+  current
 end
 
 #puts "The next period is #{current_period[0]}"
@@ -40,4 +38,4 @@ minutes = difference % 60
 difference = (difference - minutes) / 60
 hours = difference % 24
 
-puts "#{hours.to_i}:#{minutes.to_i} until #{current_period[0]}"
+%x{growlnotify -m "#{hours.to_i}:#{minutes.to_i} until #{current_period[0]}"}
